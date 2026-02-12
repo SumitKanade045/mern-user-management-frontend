@@ -81,7 +81,7 @@ const ViewUser = ({ mode }) => {
                   <div className="view-avatar">
                     <img
                       className="profile-image"
-                      src={`http://localhost:5000${user.profileImage}`}
+                      src={`https://mern-user-management-backend-387c.onrender.com${user.profileImage}?t=${new Date().getTime()}`}
                       alt={`${user?.firstName || ""} ${user?.lastName || ""}`}
                       onError={() => setImgError(true)}
                       onClick={() => setLightboxOpen(true)}
@@ -147,7 +147,7 @@ const ViewUser = ({ mode }) => {
         onClose={() => setLightboxOpen(false)}
         images={
           user?.profileImage
-            ? [{ src: `http://localhost:5000${user.profileImage}`, alt: `${user?.firstName || ""} ${user?.lastName || ""}` }]
+            ? [{ src: `https://mern-user-management-backend-387c.onrender.com${user.profileImage}?t=${new Date().getTime()}`, alt: `${user?.firstName || ""} ${user?.lastName || ""}` }]
             : []
         }
       />
