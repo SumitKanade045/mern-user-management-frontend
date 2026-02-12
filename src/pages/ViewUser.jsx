@@ -79,7 +79,7 @@ const ViewUser = ({ mode }) => {
           {/* Header/Banner Area */}
           <Box sx={{ height: "140px", background: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)", position: "relative" }} />
           
-          <Box sx={{ p: { xs: 3, md: 6 }, mt: -10 }}>
+          <Box sx={{ p: { xs: 3, md: 6 }, mt: 0 }}>
             <Grid container spacing={4} alignItems="flex-end">
               <Grid item>
                 {imageUrl && !imgError ? (
@@ -99,7 +99,13 @@ const ViewUser = ({ mode }) => {
                       alt={`${user?.firstName || ""} ${user?.lastName || ""}`}
                       onError={() => setImgError(true)}
                       onClick={() => setLightboxOpen(true)}
-                      style={{ width: "120px", height: "120px", objectFit: "cover", borderRadius: "50%" }}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        display: "block"
+                      }}
                     />
                   </Box>
                 ) : (
